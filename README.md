@@ -4,9 +4,9 @@
 
 This demo was based on [Golang OpenGL tutorial by kylewbanks.com](https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-1-hello-opengl).
 
-### modular-spatial-index
+### [modular-spatial-index](https://git.sequentialread.com/forest/modular-spatial-index)
 
-modular-spatial-index is a simple spatial index adapter for key/value databases, based on https://github.com/google/hilbert.
+[modular-spatial-index](https://git.sequentialread.com/forest/modular-spatial-index) is a simple spatial index adapter for key/value databases, based on https://github.com/google/hilbert.
 
 Read amplification for range queries is aproximately like 2x-3x in terms of IOPS and bandwidth compared to a 1-dimensional query.
 
