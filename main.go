@@ -7,8 +7,6 @@ import (
 	"image/color"
 	"math"
 	"time"
-
-	spatialIndex "git.sequentialread.com/forest/modular-spatial-index"
 	// OR: github.com/go-gl/gl/v2.1/gl
 )
 
@@ -30,8 +28,8 @@ func main() {
 		rectMaxX := rectX + rectSize
 		rectMaxY := rectY + rectSize
 
-		inputMin, inputMax := spatialIndex.GetValidInputRange()
-		_, outputMaxBytes := spatialIndex.GetOutputRange()
+		inputMin, inputMax := GetValidInputRange()
+		_, outputMaxBytes := GetOutputRange()
 		curveLength := int(binary.BigEndian.Uint64(outputMaxBytes))
 		//log.Printf("inputMin: %d, inputMax: %d, curveLength: %d", inputMin, inputMax, curveLength)
 
@@ -40,7 +38,7 @@ func main() {
 		remappedRectXMax := int(lerp(float64(inputMin), float64(inputMax), float64(rectX+rectSize)/float64(dim)))
 		remappedRectSize := remappedRectXMax - remappedRectXMin
 
-		byteRanges, err := spatialIndex.RectangleToIndexedRanges(remappedRectXMin, remappedRectYMin, remappedRectSize, remappedRectSize, 1)
+		byteRanges, err := RectangleToIndexedRanges(remappedRectXMin, remappedRectYMin, remappedRectSize, remappedRectSize, 1)
 		if err != nil {
 			panic(err)
 		}
@@ -92,7 +90,7 @@ func main() {
 					continue
 				}
 
-				curvePointBytes, err := spatialIndex.GetIndexedPoint(remappedX, remappedY)
+				curvePointBytes, err := GetIndexedPoint(remappedX, remappedY)
 				curvePoint := int(binary.BigEndian.Uint64(curvePointBytes))
 				if err != nil {
 					panic(err)
