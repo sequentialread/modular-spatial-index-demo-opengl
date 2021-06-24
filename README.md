@@ -10,7 +10,7 @@ This demo was based on [Golang OpenGL tutorial by kylewbanks.com](https://kylewb
 
 Read amplification for range queries is aproximately like 2x-3x in terms of IOPS and bandwidth compared to a 1-dimensional query.
 
-But that constant factor on top of your O(1) database is a low price to pay for a whole new dimension, right? It's certainly better than the naive approach.
+But that constant factor on top of your fast key/value database is a low price to pay for a whole new dimension, right? It's certainly better than the naive approach.
 
 See https://sequentialread.com/building-a-spatial-index-supporting-range-query-using-space-filling-hilbert-curve
 for more information.
