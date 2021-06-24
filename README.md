@@ -6,9 +6,11 @@ This demo was based on [Golang OpenGL tutorial by kylewbanks.com](https://kylewb
 
 ### [modular-spatial-index](https://git.sequentialread.com/forest/modular-spatial-index)
 
-[modular-spatial-index](https://git.sequentialread.com/forest/modular-spatial-index) is a simple spatial index adapter for key/value databases (or RDBMS if you want), based on https://github.com/google/hilbert.
+[modular-spatial-index](https://git.sequentialread.com/forest/modular-spatial-index) is a simple spatial index adapter for key/value databases like leveldb and Cassandra (or RDBMS like SQLite/Postgres if you want), based on https://github.com/google/hilbert.
 
-Read amplification for range queries is aproximately like 2x-3x in terms of IOPS and bandwidth compared to a 1-dimensional query.
+It's called "modular" because it doesn't have any indexing logic inside, you bring your own index. It simply defines a mapping from two-dimensional space (`[x,y]` as integers) to 1-dimensional space (a single string of bytes for a point, or a handful of byte-ranges for a rectangle). You can use these strings of bytes (keys) and byte-ranges (query parameters) in any database to implement a spatial index.
+
+Read amplification for range queries is ~2x-3x in terms of IOPS and bandwidth compared to a 1-dimensional query.
 
 But that constant factor on top of your fast key/value database is a low price to pay for a whole new dimension, right? It's certainly better than the naive approach.
 
