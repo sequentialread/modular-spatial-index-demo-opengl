@@ -1,5 +1,7 @@
 git.sequentialread.com/forest/modular-spatial-index v0.0.0-20210620160141-3bc0f17b2e3d h1:Z2Zmfd3PswDVPEGlfhCByURr+HWsoAUBYBsjkuI9R9k=
 git.sequentialread.com/forest/modular-spatial-index v0.0.0-20210620160141-3bc0f17b2e3d/go.mod h1:qQXFuJiQIgQIWQ8/viqhsFeoeeFOttqGAF/O5HD/lo4=
+git.sequentialread.com/forest/modular-spatial-index v0.0.0-20210629173835-1ae44dcaea44 h1:LZz9vYn7Bb0d671joSXZmav9m9aptz6NOvEd+QIxgRg=
+git.sequentialread.com/forest/modular-spatial-index v0.0.0-20210629173835-1ae44dcaea44/go.mod h1:qQXFuJiQIgQIWQ8/viqhsFeoeeFOttqGAF/O5HD/lo4=
 github.com/go-gl/gl v0.0.0-20210501111010-69f74958bac0 h1:7xNa69TzlTrKtlBtE4yyNRFP9oqAneXAs9oKJkVOECs=
 github.com/go-gl/gl v0.0.0-20210501111010-69f74958bac0/go.mod h1:wjpnOv6ONl2SuJSxqCPVaPZibGFdSci9HFocT9qtVYM=
 github.com/go-gl/glfw v0.0.0-20210410170116-ea3d685f79fb h1:yMlfD+jmoG8wwBVLaFwtcgNBY207iWsYwtNC9u+T2yk=

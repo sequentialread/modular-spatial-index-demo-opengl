@@ -6,10 +6,10 @@ import (
 	"image"
 	"image/color"
 	"math"
+	"math/bits"
 	"time"
 
-	spatialIndex "git.sequentialread.com/forest/modular-spatial-index"
-	// OR: github.com/go-gl/gl/v2.1/gl
+	spatial "git.sequentialread.com/forest/modular-spatial-index"
 )
 
 const dim = 512
@@ -20,13 +20,17 @@ const saturationFluctuationCount = float64(8)
 var frames = 0
 
 func main() {
+	spatialIndex, err := spatial.NewSpatialIndex2D(bits.UintSize)
+	if err != nil {
+		panic(err)
+	}
 	run_opengl_app(func() *image.RGBA {
 
 		seconds := float64(time.Now().UnixNano()) / float64(int64(time.Second))
 
 		rectX := int(float64(dim) * (float64(0.4) + math.Sin(seconds*float64(1.3))*float64(0.3)))
 		rectY := int(float64(dim) * (float64(0.5) + math.Cos(seconds*float64(0.3))*float64(0.2)))
-		rectSize := 9 + int(float64(40)*(float64(1)+math.Sin(seconds*float64(0.843))))
+		rectSize := 1 + int(float64(25)*(float64(1)+math.Sin(seconds*float64(0.843))))
 		rectMaxX := rectX + rectSize
 		rectMaxY := rectY + rectSize
 
